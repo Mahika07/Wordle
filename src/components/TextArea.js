@@ -8,40 +8,50 @@ export default function TextArea(props) {
    
   
  
-  //let wordlength=text.split(" ").length;;
+  
+  function checkLength(){
+    if(text.length===0)
+    {
+      {props.showAlert("Text Area Is Empty!","danger")}
+    }
+  }
   function handelText(e) {
     setText(e.target.value);
   }
   function handleUpClick() {
+    checkLength()
     setText(text.toUpperCase());
   }
   function handleLoClick() {
+    checkLength()
     setText(text.toLowerCase());
   }
   function handleClear() {
+    checkLength()
     setText("");
   }
   function handleCopy() {
-    var copyText = document.getElementById("exampleFormControlTextarea1");
+    checkLength()
+    // var copyText = document.getElementById("exampleFormControlTextarea1");
 
-    copyText.select();
+    // copyText.select();
 
-    navigator.clipboard.writeText(copyText.value);
+    // navigator.clipboard.writeText(copyText.value);
+    navigator.clipboard.writeText(text);
   }
 
   function handleExtraSpace() {
+    checkLength()
     let s = text.split(/[ ]+/);
     setText(s.join(" "));
   }
   function speak() {
+    checkLength()
     var msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
   }
-const getWordLength=()=>{
-  text=text.split(" ");
-  
-}
+
   return (
     <>
 
@@ -49,7 +59,7 @@ const getWordLength=()=>{
         <div className="mb-3">
           <label
             htmlFor="exampleFormControlTextarea1"
-            className={`form-label my-3 text-${props.mode==='light'?'dark':'light'}`}
+            className={`form-label my-1 text-${props.mode==='light'?'dark':'light'}`}
             style={{ fontSize: 40 }}
           >
             TEXTAREA
@@ -64,42 +74,42 @@ const getWordLength=()=>{
 
           <button
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             onClick={handleUpClick}
           >
             Upper Case
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             onClick={handleLoClick}
           >
             Lower Case
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             onClick={handleClear}
           >
             Clear Text
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             onClick={handleCopy}
           >
             Copy Text
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             onClick={handleExtraSpace}
           >
             Remove Spaces
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             onClick={speak}
           >
             Read Text
@@ -108,7 +118,9 @@ const getWordLength=()=>{
         <h3 className={`my-2 text-${props.mode==='light'?'dark':'light'}`}>Text Summray</h3>
         <p className={`text-${props.mode==='light'?'dark':'light'}`}>
         
-          {getWordLength} : Words , {text.length} : Characters
+          {text.split(/\s+/).filter((element)=>{
+            return element.length!==0
+          }).length} : Words , {text.length} : Characters
         </p>
       </div>
     </>
