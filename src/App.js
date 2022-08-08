@@ -46,11 +46,10 @@ function App() {
             
           </Route>
   
-          <Route exact path="/" element={ <TextArea mode={mode} showAlert={showAlert}/>}>
-   
-    </Route>
+          
       
     </Routes>
+    <TextArea mode={mode} showAlert={showAlert}/>
   </BrowserRouter>
   </>
   );
