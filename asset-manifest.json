@@ -1,7 +1,7 @@
 {
   "main.css": "/Wordle/static/css/main.2c546753.chunk.css",
-  "main.js": "/Wordle/static/js/main.bc610a69.chunk.js",
-  "main.js.map": "/Wordle/static/js/main.bc610a69.chunk.js.map",
+  "main.js": "/Wordle/static/js/main.ad8ab6f8.chunk.js",
+  "main.js.map": "/Wordle/static/js/main.ad8ab6f8.chunk.js.map",
   "static/js/1.97af9aab.chunk.js": "/Wordle/static/js/1.97af9aab.chunk.js",
   "static/js/1.97af9aab.chunk.js.map": "/Wordle/static/js/1.97af9aab.chunk.js.map",
   "static/js/2.0ba3a7ea.chunk.js": "/Wordle/static/js/2.0ba3a7ea.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/Wordle/static/js/runtime~main.8ec9912c.js.map",
   "static/css/main.2c546753.chunk.css.map": "/Wordle/static/css/main.2c546753.chunk.css.map",
   "index.html": "/Wordle/index.html",
-  "precache-manifest.c1a3e7f37f0e989c9752ad5b4bd0fda3.js": "/Wordle/precache-manifest.c1a3e7f37f0e989c9752ad5b4bd0fda3.js",
+  "precache-manifest.4d1bb450927dce0719e583f0543ad067.js": "/Wordle/precache-manifest.4d1bb450927dce0719e583f0543ad067.js",
   "service-worker.js": "/Wordle/service-worker.js"
 }
