@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import TextArea from './components/TextArea';
 import React, { useState } from 'react'
 import {
-  HashRouter,
+  BrowserRouter,
   Routes,
   Route,
 
@@ -37,21 +37,22 @@ function App() {
   }
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Navbar mode={mode} toggle={toggleMode} />
         <Alert alert={alert} />
         <Routes>
+          <Route index element={<TextArea mode={mode} showAlert={showAlert} />}>
+
+          </Route>
           <Route exact path="/about" element={<About mode={mode} />}>
 
           </Route>
 
-          <Route index element={<TextArea mode={mode} showAlert={showAlert} />}>
 
-          </Route>
 
         </Routes>
 
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
