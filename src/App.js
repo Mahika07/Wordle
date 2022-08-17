@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import TextArea from './components/TextArea';
 import React, { useState } from 'react'
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 
@@ -37,7 +37,7 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar mode={mode} toggle={toggleMode} />
         <Alert alert={alert} />
         <Routes>
@@ -51,7 +51,7 @@ function App() {
 
         </Routes>
 
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
