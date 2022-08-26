@@ -2,21 +2,21 @@
 import React, { useState } from "react";
 
 export default function TextArea(props) {
-  
+
   const [text, setText] = useState("");
-  
-   
-  
- 
-  
-  function checkLength(){
-    if(text.length===0)
-    {
-      {props.showAlert("Text Area Is Empty!","danger")}
+
+
+
+
+
+  function checkLength() {
+    if (text.length === 0) {
+      { props.showAlert("Text Area Is Empty!", "danger") }
     }
   }
   function handelText(e) {
     setText(e.target.value);
+
   }
   function handleUpClick() {
     checkLength()
@@ -59,7 +59,7 @@ export default function TextArea(props) {
         <div className="mb-3">
           <label
             htmlFor="exampleFormControlTextarea1"
-            className={`form-label my-1 text-${props.mode==='light'?'dark':'light'}`}
+            className={`form-label my-1 text-${props.mode === 'light' ? 'dark' : 'light'}`}
             style={{ fontSize: 40 }}
           >
             TEXTAREA
@@ -115,11 +115,11 @@ export default function TextArea(props) {
             Read Text
           </button>
         </div>
-        <h3 className={`my-2 text-${props.mode==='light'?'dark':'light'}`}>Text Summray</h3>
-        <p className={`text-${props.mode==='light'?'dark':'light'}`}>
-        
-          {text.split(/\s+/).filter((element)=>{
-            return element.length!==0
+        <h3 className={`my-2 text-${props.mode === 'light' ? 'dark' : 'light'}`}>Text Summray</h3>
+        <p className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+
+          {text.split(/\s+/).filter((element) => {
+            return element.length !== 0
           }).length} : Words , {text.length} : Characters
         </p>
       </div>
